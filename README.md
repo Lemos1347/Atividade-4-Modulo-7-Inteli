@@ -146,4 +146,4 @@ A API possui um endpoint `/model/predict` que recebe os seguintes dados no "body
 - "age": idade em anos,
 - "annual_income": em milhares de dólares por ano (170 representaria $170.000 por ano)
 
-Caso a requisição proceda corretamente, utilizamos o modelo importado com a biblioteca `joblib`, retornando na chamada o "spending score" previsto para o cliente de acordo com o que o modelo informa. O código completo pode ser encontrado [aqui](/main.py).
+Caso a requisição proceda corretamente, utilizamos o modelo importado com a biblioteca `joblib`, retornando na chamada o "spending score" previsto para o cliente de acordo com o que o modelo informa. O código completo pode ser encontrado [aqui](/backend/model).
