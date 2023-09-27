@@ -23,9 +23,14 @@ export const authOptions: NextAuthOptions = {
           "🚀 ~ file: route.ts:22 ~ authorize ~ credentials:",
           credentials
         );
+
+        console.log(
+          "🚀 ~ file: route.ts:27 ~ authorize ~ API_URL:",
+          process.env.API_URL
+        );
         const { email, password } = credentials as Credentials;
         try {
-          const response = await fetch("http://34.225.28.22:3001/auth/login", {
+          const response = await fetch(`${process.env.API_URL}/auth/login`, {
             method: "POST",
             cache: "no-cache",
             body: JSON.stringify({ email, password }),
@@ -39,7 +44,7 @@ export const authOptions: NextAuthOptions = {
               jsonResponse
             );
 
-            const user_response = await fetch("http://34.225.28.22:3001/user/", {
+            const user_response = await fetch(`${process.env.API_URL}/user/`, {
               method: "GET",
               cache: "no-cache",
               headers: {

@@ -30,7 +30,7 @@ interface Token {
 
 export { default } from "next-auth/middleware";
 
-const baseURL = "http://34.225.28.22:3000";
+const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
 
 export async function middleware(request: NextRequest) {
   const token = await getToken({ req: request });

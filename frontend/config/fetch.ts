@@ -7,14 +7,15 @@ export const fetchInstance = async (
   endpoint: string,
   options?: RequestInit
 ) => {
-  let baseURL = "http://34.225.28.22:3001";
+  let baseURL = process.env.API_URL;
+  console.log("🚀 ~ file: fetch.ts:11 ~ API_URL:", baseURL);
 
   let session: Session | null = null;
   if (isServerSide()) {
     session = await getServerSession(authOptions);
   } else {
     session = await getSession();
-    baseURL = "http://34.225.28.22:3001";
+    baseURL = process.env.NEXT_PUBLIC_API_URL;
   }
 
   if (!session) {
